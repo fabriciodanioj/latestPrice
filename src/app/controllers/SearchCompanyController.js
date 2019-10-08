@@ -1,17 +1,16 @@
-const axios = require("axios");
-const Company = require("../models/Company");
-require('dotenv').config();
+import api from '../../services/api';
+import Company from "../models/Company";
 
-module.exports = {
+class SearchCompanyController {
     async store(req, res) {
         let { symbol } = await req.body;
         const token = process.env.SECRET_API;
 
         symbol = symbol.toUpperCase();
 
-        const { data } = await axios.get(`https://cloud.iexapis.com/stable/stock/${symbol}/company/?token=${token}`);
+        const { data } = await api.get(`/stock/${symbol}/company/?token=${token}`);
 
-        const latestPrice = await axios.get(`https://cloud.iexapis.com/stable/stock/${symbol}/quote/latestPrice?token=${token}`);
+        const latestPrice = await api.get(`/stock/${symbol}/quote/latestPrice?token=${token}`);
 
         let company = await Company.findOne({ symbol });
 
@@ -36,5 +35,8 @@ module.exports = {
         )
 
         return res.json(company);
-    },
+    }
+
 }
+
+export default new SearchCompanyController()

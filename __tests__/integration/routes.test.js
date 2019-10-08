@@ -1,13 +1,14 @@
-const app = require('../../src/server');
-const request = require('supertest');
+import app from '../../src/app';
+import request from 'supertest';
 
 describe("Route test:", () => {
     it("Should return code 200 when call the /symbols route", async (done) => {
-        const response = await request(app).get('/symbols');
+        const response = await request(app)
+            .get('/symbols');
 
         expect(response.status).toBe(200);
         done();
-    },30000);
+    });
 
     it("Should return code 200 when call the /chart route", async (done) => {
         const response = await request(app).get('/chart').set({
