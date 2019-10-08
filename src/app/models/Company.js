@@ -26,11 +26,9 @@ const CompanySchema = new Schema({
         required: true,
     },
     industry: String,
-    country: String,
-    updatedAt:{
-        type: Date,
-        default: Date.now(),
-    }    
+    country: String,    
+}, {
+    timestamps: true, 
 });
 
 export default model("Company", CompanySchema);

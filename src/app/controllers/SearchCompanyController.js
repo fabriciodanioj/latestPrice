@@ -1,7 +1,7 @@
 import api from '../../services/api';
 import Company from "../models/Company";
 
-class SearchCompanyController {
+class SearchCompanyController { 
     async store(req, res) {
         let { symbol } = await req.body;
         const token = process.env.SECRET_API;
@@ -39,4 +39,4 @@ class SearchCompanyController {
 
 }
 
-export default new SearchCompanyController()
+export default new SearchCompanyController();

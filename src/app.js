@@ -1,4 +1,4 @@
-import 'dotenv/config';
+import 'dotenv/config';// Habilitar as variáveis ambiente
 
 import express, { json } from "express";
 import { connect } from "mongoose";
@@ -6,8 +6,8 @@ import cors from "cors";
 
 import routes from "./routes";
 
-class App {
-    constructor() { 
+class App { // habilitar acesso aos middlewares e rotas, menos a porta
+    constructor() {// método para inicializar o projeto
         this.server = express();
 
         this.database();
@@ -33,4 +33,4 @@ class App {
     }
 }
 
-export default new App().server
+export default new App().server // aqui você tem o acesso as funcionalidades do express

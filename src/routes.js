@@ -1,4 +1,4 @@
-import express, { Router } from "express";
+import { Router } from "express";
 
 import SearchCompanyController from "./app/controllers/SearchCompanyController";
 import ListCompanyController from "./app/controllers/ListCompanyController";
