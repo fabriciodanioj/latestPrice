@@ -1,6 +1,12 @@
 # latestPrice
 A simple application that displays stock value through API calls. A screen with only one text input that will receive an action symbol (ex: aapl for Apple, fb for Facebook, twtr for Twitter) and return the company's last share value as well as other relevant information.
 
+# To use this aplication:
+
+- Install all the dependencies 
+- Create a .env and set the environment variables : PUBLISHABLE_API, SECRET_API, BASE_URL(iexcloud api) and MONGO_URL (Set the mongodb database URL);
+- Run application: `yarn dev`
+- To tests run: `yarn test`
 
 # Api tokens
 
@@ -13,3 +19,5 @@ A simple application that displays stock value through API calls. A screen with 
 -----------------------------------------------------------------------------------------
 ``` Secret API tokens should be kept confidential and only stored on your own servers. Your account’s secret API token can perform any API request to IEX Cloud.
 ```
+
+
