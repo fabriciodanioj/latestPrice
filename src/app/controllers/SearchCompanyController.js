@@ -26,13 +26,12 @@ class SearchCompanyController {
                 latestPrice: latestPrice.data,
             })
         }
-
+        
         await Company.findOneAndUpdate(
             { symbol },
-            { latestPrice: latestPrice.data,
-            },
+            { latestPrice: latestPrice.data },
             {upsert: true}
-        )
+        );
 
         return res.json(company);
     }

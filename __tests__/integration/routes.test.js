@@ -1,7 +1,18 @@
 import app from '../../src/app';
 import request from 'supertest';
 
+import factory from '../factory';
+
 describe("Route test:", () => {
+    // teste com dados fake
+    xit('should be able created a new company', async () => {
+        const company = await factory.attrs('Company');
+        const response = await request(app)
+            .post('/company')
+            .send(company);
+
+        expect(response.body).toHaveProperty('id');
+    }); 
     it("Should return code 200 when call the /symbols route", async (done) => {
         const response = await request(app)
             .get('/symbols');
